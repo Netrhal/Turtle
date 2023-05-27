@@ -62,15 +62,33 @@ public class Turtle {
         StdDraw.enableDoubleBuffering();
         double x0 = 0.5;
         double y0 = 0.0;
-        double a0 = 60.0;
-        double step = Math.sqrt(3)/2;
+        double a0 = 60;
+
         Turtle turtle = new Turtle(x0, y0, a0);
+        triangle(turtle);
+        //star(turtle);
+    }
+
+    public static void triangle (Turtle turtle) {
+        double step = Math.sqrt(3)/2;
         turtle.goForward(step);
         turtle.turnLeft(120.0);
         turtle.goForward(step);
         turtle.turnLeft(120.0);
         turtle.goForward(step);
         turtle.turnLeft(120.0);
+        turtle.show();
+
+    }
+
+    public static void star (Turtle turtle) {
+        double step = 0.2;
+        for (int i = 0; i < 6; i++) {
+            turtle.goForward(step);
+            turtle.turnLeft(60);
+            turtle.goForward(step);
+            turtle.turnLeft(-120);
+        }
         turtle.show();
     }
 
